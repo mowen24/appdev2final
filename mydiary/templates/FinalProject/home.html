@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Secret Diary</title>
+</head>
+<body>
+    <h1>Welcome {{ user.username }}</h1>
+    <p>Login successful. Click <a href="{% url 'logout' %}?next={% url 'index' %}">here</a> to logout.</p>
+    <form action="entry" method="POST" id="diaryform">
+        {% csrf_token %}
+
+        <textarea name='userentry'></textarea>
+        <input type="submit">
+    </form>
+
+    {% for entry in entrys %}
+        <h2>{{ entry.pub_date }}</h2>
+        <p>{{ entry.text }}</p>
+    {% endfor %}
+</body>
+</html>
