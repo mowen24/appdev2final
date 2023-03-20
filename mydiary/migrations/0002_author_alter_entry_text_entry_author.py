@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('FinalProject', '0001_initial'),
+        ('mydiary', '0001_initial'),
     ]
 
     operations = [
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='entry',
             name='author',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, to='FinalProject.author'),
+            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.CASCADE, to='mydiary.author'),
             preserve_default=False,
         ),
     ]
