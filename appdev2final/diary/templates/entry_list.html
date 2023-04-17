@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Diary</title>
+</head>
+<body>
+    <h1>My Diary Entries</h1>
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'entry_detail' entry.id %}">{{ entry.title }}</a></li>
+        {% empty %}
+            <li>No entries yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'entry_create' %}">Create New Entry</a>
+</body>
+</html>

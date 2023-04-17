@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if edit %}Edit Entry{% else %}Create New Entry{% endif %}</title>
+</head>
+<body>
+    <h1>{% if edit %}Edit Entry{% else %}Create New Entry{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if edit %}Update Entry{% else %}Create Entry{% endif %}</button>
+    </form>
+    <a href="{% url 'entry_list' %}">Back to Entries</a>
+</body>
+</html>
