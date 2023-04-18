@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'diary/styles.css' %}">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? Click <a href="{% url 'create_profile' %}?next={% url 'login' %}">here</a> to create an account.</p>
+</body>
+</html>

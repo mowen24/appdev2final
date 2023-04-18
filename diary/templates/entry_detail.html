@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ entry.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'diary/styles.css' %}">
+</head>
+<body>
+    <h1>{{ entry.title }}</h1>
+    <p>{{ entry.content }}</p>
+    <p>Created on: {{ entry.created_at }}</p>
+    <a href="{% url 'entry_update' entry.id %}">Edit Entry</a>
+    <a href="{% url 'entry_delete' entry.id %}">Delete Entry</a>
+    <a href="{% url 'entry_list' %}">Back to Entries</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Diary</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'diary/styles.css' %}">
+</head>
+<body>
+    <h1>My Diary Entries</h1>
+    <ul>
+        {% for entry in entries %}
+            {% if entry.user == request.user %}
+                <li><a href="{% url 'entry_detail' entry.id %}">{{ entry.title }}</a></li>
+            {% endif %}
+        {% empty %}
+            <li>No entries yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'entry_create' %}">Create New Entry</a>
+    <a href="{% url 'logout' %}?next={% url 'landing' %}">Logout</a>
+</body>
+</html>

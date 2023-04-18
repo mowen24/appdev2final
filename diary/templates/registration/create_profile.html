@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Diary</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'diary/styles.css' %}">
+</head>
+<body>
+  <h2>Create Your Profile</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+</body>
