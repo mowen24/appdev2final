@@ -12,6 +12,9 @@
         {% csrf_token %}
         <button type="submit">Yes, Delete</button>
     </form>
-    <a href="{% url 'entry_detail' entry.id %}">Cancel</a>
+    <nav>
+        <a href="{% url 'entry_detail' entry.id %}">Cancel</a>
+    </nav>
+    
 </body>
 </html>

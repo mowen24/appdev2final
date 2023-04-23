@@ -16,7 +16,10 @@
             <li>No entries yet.</li>
         {% endfor %}
     </ul>
-    <a href="{% url 'entry_create' %}">Create New Entry</a>
-    <a href="{% url 'logout' %}?next={% url 'landing' %}">Logout</a>
+    <nav>
+        <a href="{% url 'entry_create' %}">Create New Entry</a>
+        <a href="{% url 'logout' %}?next={% url 'landing' %}">Logout</a>
+    </nav>
+    
 </body>
 </html>

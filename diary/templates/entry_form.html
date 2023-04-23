@@ -12,6 +12,9 @@
         {{ form.as_p }}
         <button type="submit">{% if edit %}Update Entry{% else %}Create Entry{% endif %}</button>
     </form>
-    <a href="{% url 'entry_list' %}">Back to Entries</a>
+    <nav>
+        <a href="{% url 'entry_list' %}">Back to Entries</a>
+    </nav>
+    
 </body>
 </html>
